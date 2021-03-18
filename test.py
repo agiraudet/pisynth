@@ -40,7 +40,20 @@ class Key():
                 return 1
         return 0
 
-key_nb = 20
+note = [261.63,
+        277.18,
+        293.66,
+        311.13,
+        329.63,
+        349.23,
+        369.99,
+        392.00,
+        415.30,
+        440.00,
+        466.16,
+        493.88]
+
+key_nb = len(note)
 key_size = wd / key_nb
 keys = []
 i = 0
@@ -67,4 +80,4 @@ while loop:
             if k.clic_in():
                 k.draw(win, (0,255,0))
                 pygame.display.update()
-                play_for(sine_wave(k.num * 100, 4096), 500)
+                play_for(sine_wave(note[k.num], 4096), 100)
